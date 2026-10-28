@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pawsome Puppies</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: #faf9f6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Header / Navbar ── */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #e06b3a;
+    }
+    .logo span { color: #333; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #e06b3a; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      text-align: center;
+      padding: 100px 24px 110px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      color: #3b2f2f;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      color: #5a4545;
+    }
+    .hero-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: #e06b3a;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.25s, transform 0.15s;
+    }
+    .hero-btn:hover {
+      background: #c9572b;
+      transform: translateY(-2px);
+    }
+
+    /* ── Cards Section ── */
+    .cards-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .cards-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #3b2f2f;
+    }
+    .cards-section > p {
+      text-align: center;
+      max-width: 550px;
+      margin: 0 auto 48px;
+      color: #777;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body {
+      padding: 20px 24px 24px;
+    }
+    .card-body h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: #3b2f2f;
+    }
+    .card-body p {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 16px;
+    }
+    .card-tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: #ffecd2;
+      color: #e06b3a;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #3b2f2f;
+      color: #cdbfbf;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    footer .footer-brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #e06b3a;
+      margin-bottom: 8px;
+    }
+    footer p {
+      font-size: 0.9rem;
+    }
+    footer .footer-links {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      list-style: none;
+    }
+    footer .footer-links a {
+      color: #cdbfbf;
+      transition: color 0.2s;
+    }
+    footer .footer-links a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="nav">
+      <div class="logo">🐾 Paw<span>some</span></div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#puppies">Puppies</a></li>
+        <li><a href="#">Adopt</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Find Your Perfect Puppy</h1>
+    <p>Every puppy deserves a loving home. Browse our adorable friends and find the one that steals your heart.</p>
+    <a href="#puppies" class="hero-btn">Meet the Pups ↓</a>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards-section" id="puppies">
+    <h2>Our Adorable Puppies</h2>
+    <p>Each one is vaccinated, micro-chipped, and ready to become your new best friend.</p>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Golden Retriever puppy" />
+        <div class="card-body">
+          <h3>Charlie</h3>
+          <p>A playful Golden Retriever who loves belly rubs and long walks in the park.</p>
+          <span class="card-tag">Golden Retriever</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=600&q=80" alt="Labrador puppy" />
+        <div class="card-body">
+          <h3>Bella</h3>
+          <p>This sweet Labrador is full of energy and loves to play fetch all day long.</p>
+          <span class="card-tag">Labrador</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&q=80" alt="Corgi puppy" />
+        <div class="card-body">
+          <h3>Mochi</h3>
+          <p>A tiny Corgi with the biggest personality. Guaranteed to make you smile every day.</p>
+          <span class="card-tag">Corgi</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600&q=80" alt="Beagle puppy" />
+        <div class="card-body">
+          <h3>Daisy</h3>
+          <p>An adventurous Beagle who follows her nose and loves to explore new trails.</p>
+          <span class="card-tag">Beagle</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&q=80" alt="Husky puppy" />
+        <div class="card-body">
+          <h3>Luna</h3>
+          <p>A fluffy Husky with striking blue eyes who's always up for an adventure.</p>
+          <span class="card-tag">Husky</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=600&q=80" alt="Poodle puppy" />
+        <div class="card-body">
+          <h3>Oliver</h3>
+          <p>A curly-haired charmer who's as smart as he is cuddly. Hypoallergenic too!</p>
+          <span class="card-tag">Poodle</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-brand">🐾 Pawsome</div>
+    <p>&copy; 2026 Pawsome Puppies. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Twitter</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
